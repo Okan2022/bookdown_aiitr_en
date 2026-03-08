@@ -183,12 +183,12 @@ print(prices_combined) #printing it
 
 Objects can contain information of different *data types*:
 
-|               |               |                                              |
-|---------------|---------------|----------------------------------------------|
-| **Numeric**   | Numbers       | `c(1, 2.4, 3.14, 4)`                         |
-| **Character** | Text          | `c("1", "blue", "fun", "monster")`           |
-| **Logical**   | True or false | `c(TRUE, FALSE, TRUE, FALSE)`                |
-| **Factor**    | Category      | `c("Strongly disagree", "Agree", "Neutral")` |
+|  |  |  |
+|-----------------|-----------------|--------------------------------------|
+| **Numeric** | Numbers | `c(1, 2.4, 3.14, 4)` |
+| **Character** | Text | `c("1", "blue", "fun", "monster")` |
+| **Logical** | True or false | `c(TRUE, FALSE, TRUE, FALSE)` |
+| **Factor** | Category | ``` c("Strongly disagree",``"Neutral",``"Agree") ``` |
 
 For data analysis commands sometimes require special object classes. With the `class()` command we can find out the class. And with `as.numeric` for example we can change classes by assigning it to itself, by it is common to assign it to a new object:
 
@@ -199,7 +199,7 @@ class(food) #character
 class(cola_prices) #numeric
 ```
 
-We can also change the classes of variables. To do so, we can use `as.factor()`, `as.numeric()`, `as.character()` and so forth. You can do that for every class. Let us change the cola_prices to a vector.
+We can also change the classes of variables. To do so, we can use `as.factor()`, `as.numeric()`, `as.character()` and so forth. You can do that for every class. Let us change the `cola_prices` to a vector.
 
 -   To do so, we change call `as.character()` and put the object in it. Then we assign it to another object called `cola_prices_character`. This object will have the class `"character"`.
 
@@ -357,7 +357,7 @@ One of the most frequently used and therefore most important logical operators i
 
 First, you define an if statement. The if statement is a logical statement for example bigger, smaller than X. The logical statement is your test expression. With this you tell the program to test the condition for an object, in excel a cell or whatever object in your programming language can be tested. The program then checks if the condition is TRUE or FALSE. Until this point every if else is the same and now we will look at some variations:
 
-![***Figure 2: Logic of if-else statements***](images/r-if-else-statement_2.png){fig-align="center" width="350"}
+![***Figure 2: Logic of if-else statements***](images/r-if-else-statement_2.PNG){fig-align="center" width="350"}
 
 Figure 2 shows the logic of an if else statement with one condition. We say that if the test expression is true something should happen. If not nothing happens, because nothing was defined.
 
@@ -397,7 +397,7 @@ As you can see if the grade is bigger than 2 nothing happens. Otherwise "Good Jo
 
 An if command on its own is quite useless. Things get interesting, when we also have a body for the else command. What happens now, is that instead of nothing being printed when the test expression is FALSE. Then the body of else is printed.
 
-![**Figure 3: Standard RStudio Interface**](images/r-if-statement.png){fig-align="center" width="350"}
+![**Figure 3: Standard RStudio Interface**](images/r-if-statement.PNG){fig-align="center"}
 
 Now we just add a **body of else** into the equation, in R that means we need to define it:
 
