@@ -1,13 +1,8 @@
 .Rhistory
 .RData
-.Rproj.user
+.Rproj.user/
 *.Rproj
 _bookdown_files/
 bookdownproj_files/
-libs/
-docs/
-*_files/
 *_cache/
-.Rproj.user/
-*.html
-*.pdf
+# libs/ und *.html hier NICHT reinschreiben!

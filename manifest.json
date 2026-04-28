@@ -6,7 +6,7 @@
     "appmode": "rmd-static",
     "primary_rmd": "index.Rmd",
     "primary_html": null,
-    "content_category": null,
+    "content_category": "site",
     "has_parameters": false
   },
   "packages": {
@@ -7612,7 +7612,7 @@
       "checksum": "27d1cba08ca8cde5ab7887fa262f5191"
     },
     "_output.yml": {
-      "checksum": "79121f48c7a9536c9947a0ff6bdd4a24"
+      "checksum": "32ac5d2d9e7bb458ee802e863f44e032"
     },
     ".gitattributes": {
       "checksum": "3c7219d39b5406b1d6254e8525b89f66"
@@ -7640,6 +7640,15 @@
     },
     "09-solutions_exercises.Rmd": {
       "checksum": "40f76929523e2fb2d90305781b443af1"
+    },
+    "bookdownproj.html": {
+      "checksum": "6e474aa8930fe8f4114093e328437e24"
+    },
+    "bookdownproj.Rmd": {
+      "checksum": "897be048ccb889ab2d996c02b4c3d775"
+    },
+    "docs/reference-keys.txt": {
+      "checksum": "acb19455c6613db2f34ef0f2d6ecfc5b"
     },
     "EDA_penguins_files/figure-html/snv2_new-1.png": {
       "checksum": "d17e4cdb3adf27a512a827c7e8483b81"
