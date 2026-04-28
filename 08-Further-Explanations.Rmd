@@ -41,7 +41,6 @@ table_ovb <- function(model1, model2) {
 }
 ```
 
-
 ## Probability Theory
 
 **Before diving into Exploratory Data Analysis and Linear Regression, it's worth taking a moment to look at Probability Theory.** This is crucial because probability forms the foundation of statistics: it allows us to make statements that include uncertainty. Instead of saying something definite like *"It will rain tomorrow,"* probability allows us to say, *"There is a 70% chance of rain tomorrow."* That means you might want to take an umbrella — but there’s still a 30% chance you won’t need it.

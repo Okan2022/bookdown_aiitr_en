@@ -187,17 +187,12 @@ The first thing to do, when cleaning data is to load the data into R. The first 
 
 This table presents some of the most frequent data types, which you can download and load into R. There are of course more data types, and to find out if you can read them into R, you can just google the type and look for the command. Mostly you will find a package with a command. And mostly, those commands start with "read".
 
-+---------------------------+----------------+----------------------------------------------+-------------------------+
-| File                      | File Extension | Package                                      | Command                 |
-+===========================+================+==============================================+=========================+
-| **Stata**                 | .dta           | haven                                        | `read_dta()`            |
-+---------------------------+----------------+----------------------------------------------+-------------------------+
-| **CSV-Files**             | .csv           | readr (is included in the tidyverse package) | `read_csv()`            |
-+---------------------------+----------------+----------------------------------------------+-------------------------+
-| **Excel-Files**           | .xlsx; .xls    | readxl                                       | `read.rds()`            |
-+---------------------------+----------------+----------------------------------------------+-------------------------+
-| **RData (also RDS Data)** | .RData;.rds    | base R functions, no package required        | `load()` , `read.rds()` |
-+---------------------------+----------------+----------------------------------------------+-------------------------+
+| File | File Extension | Package | Command |
+|----|----|----|----|
+| **Stata** | .dta | haven | `read_dta()` |
+| **CSV-Files** | .csv | readr (is included in the tidyverse package) | `read_csv()` |
+| **Excel-Files** | .xlsx; .xls | readxl | `read.rds()` |
+| **RData (also RDS Data)** | .RData;.rds | base R functions, no package required | `load()` , `read.rds()` |
 
 : Examples of Different Data Types and how to load them into R
 
@@ -265,25 +260,16 @@ The first function I introduce you is the `filter()` function. Within the filter
 
     Here is a quick reminder of logical operators in R:
 
-    +--------------------------+----------------------------------------------------------------------------+
-    | Logical Operator         | Meaning                                                                    |
-    +==========================+============================================================================+
-    | ==                       | equals                                                                     |
-    +--------------------------+----------------------------------------------------------------------------+
-    | \<                       | smaller than                                                               |
-    +--------------------------+----------------------------------------------------------------------------+
-    | \>                       | greater than                                                               |
-    +--------------------------+----------------------------------------------------------------------------+
-    | \<=                      | less than or equal to                                                      |
-    +--------------------------+----------------------------------------------------------------------------+
-    | \>=                      | greater than or equal to                                                   |
-    +--------------------------+----------------------------------------------------------------------------+
-    | ! (e.g. !=; \>!; \<!...) | not equal, not greater than, not smaller than                              |
-    +--------------------------+----------------------------------------------------------------------------+
-    | &                        | element-wise AND operator. It returns TRUE if both elements are true       |
-    +--------------------------+----------------------------------------------------------------------------+
-    | \|                       | element-wise OR operator. It returns TRUE if one of the statements is TRUE |
-    +--------------------------+----------------------------------------------------------------------------+
+    | Logical Operator | Meaning |
+    |----|----|
+    | == | equals |
+    | \< | smaller than |
+    | \> | greater than |
+    | \<= | less than or equal to |
+    | \>= | greater than or equal to |
+    | ! (e.g. !=; \>!; \<!...) | not equal, not greater than, not smaller than |
+    | & | element-wise AND operator. It returns TRUE if both elements are true |
+    | \| | element-wise OR operator. It returns TRUE if one of the statements is TRUE |
 
 #### Filtering for only one condition
 
@@ -800,7 +786,7 @@ countries <- c("BE", "BG", "CH", "EE", "FR","GB")
 Afterwards we define, which variables we want. You do that by using the official indicator, thus the variable you want. You can find the indicators on the website of the [world bank data](https://data.worldbank.org/indicator). Click on the variables you want, then click on the details, and there you find the indicator. I will use GDP per capita, Fuel exports, CO2 emissions (kt).
 
 ```{r getting indicators}
-indicators = c("NY.GDP.PCAP.CD", "TX.VAL.FUEL.ZS.UN", "EN.ATM.CO2E.KT")
+indicator = c("NY.GDP.PCAP.CD", "TX.VAL.FUEL.ZS.UN", "EN.ATM.CO2E.KT")
 ```
 
 Now we are ready to use the API.
@@ -816,7 +802,7 @@ Now we are ready to use the API.
 ```{r world bank data}
 #wb <- WDI( 
 #  country = countries, #We include our countries 
-#  indicator = indicators, #We include our variables 
+#  indicator = indicator, #We include our variables 
 #  start = 2020, #start date 
 #  end = 2020) #end date 
 
@@ -1081,28 +1067,29 @@ g.  drop all missing values
 h.  Check out your new dataset
 
 ```{r ch3 exercise 1a, eval=FALSE}
-
+#Assign new data
+ess2 <-
 ```
 
 ### Exercise 2: Merging Datasets
 
 The `gapminder` package in R loads automatically the gapminder dataset. The gapminder project is an independent educational non-profit fighting global misconceptions, check out their website: <https://www.gapminder.org/> The gapminder dataset is already loaded.
 
-a.  Get an overview of the gapminder dataset. There are different ways to do so, you can choose by yourself
+a.  Get an overview of the gapminder dataset. There are different ways to do so, you can choose by yourself.
 
 ```{r ch3 exercise 1b, eval=FALSE}
-
+#Getting an overview
 ```
 
 b.  Load World Bank Data from 1972 to 2007 and load the variable "Exports and Goods (% of GDP)".
-c.  Merge the World Bank data to the gapminder data, so a dataset evolves with the number of observations of the gapminder data.
+c.  Merge the World Bank data to the gapminder data, so a dataset evolves with the numbess2er of observations of the gapminder data.
 
 ```{r ch3 exercise 1c, eval=FALSE}
-  
+#merge world bank and gapminder dataset
 ```
 
 d\. Clean the data by dropping all missing values
 
 ```{r ch3 exercise 1d, eval=FALSE}
-
+#Cleaning Process
 ```

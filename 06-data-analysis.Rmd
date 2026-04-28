@@ -679,13 +679,13 @@ You want to know if age has an impact on the satisfaction with the last episode.
 a\. Calculate $\beta_0$ and $\beta_1$ by hand
 
 ```{r ch6 exercise 1a, eval=FALSE}
-
+# calculate beta_0 and beta_1
 ```
 
 b\. Calculate $\beta_0$ and $\beta_1$ automatically with R
 
 ```{r ch6 exercise 1b, eval=FALSE}
-
+# calculate beta_0 and beta_1 automatically
 ```
 
 c\. Interpret all quantities of your result: Standard Error, t-statistic, p-value, confidence intervals and the $R^2$.
@@ -693,7 +693,7 @@ c\. Interpret all quantities of your result: Standard Error, t-statistic, p-valu
 d\. Check for influential outliers
 
 ```{r ch6 exercise 1d, eval=FALSE}
-
+# check for influential outliers
 ```
 
 ### Exercise 2: Multivariate Regression
@@ -701,7 +701,7 @@ d\. Check for influential outliers
 a\. Add the variable `female` to your regression
 
 ```{r ch6 exercise 2a, eval=FALSE}
-
+# multivariate regression
 ```
 
 b\. Interpret the Output. What has changed? What stays the same?
@@ -709,11 +709,13 @@ b\. Interpret the Output. What has changed? What stays the same?
 c\. Make an interaction effect between age and gender and interpret it!
 
 ```{r ch6 exercise 2c, eval=FALSE}
-
+# Regression with interaction effect
 ```
 
 d\. Plot the interaction and make the plot nice
 
 ```{r ch6 exercise 2d, eval=FALSE}
+# Plotting the interaction
 
+# Making the plot nice
 ```

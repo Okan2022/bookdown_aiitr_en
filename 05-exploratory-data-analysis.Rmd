@@ -491,7 +491,7 @@ The dlookr package has one special feature: It can generate an EDA report with o
 `dlookr::eda_paged_report(penguins, output_format = "html")`
 
 |  |  |  |
-|------------------------|------------------------|------------------------|
+|----|----|----|
 | ![](images/Bildschirmfoto%20vom%202025-04-12%2019-48-38.png) | ![](images/Bildschirmfoto%20vom%202025-04-12%2019-49-55.png) | ![](images/Bildschirmfoto%20vom%202025-04-12%2019-50-21.png) |
 | ![](images/Bildschirmfoto%20vom%202025-04-12%2019-52-17.png) | ![](images/Bildschirmfoto%20vom%202025-04-12%2019-53-30.png) | ![](images/Bildschirmfoto%20vom%202025-04-12%2019-54-07.png) |
 
@@ -522,7 +522,7 @@ And finally, we can use DataExplorer to generate an automated Data Report:
 `create_report(penguins)`
 
 |  |  |
-|------------------------------------|------------------------------------|
+|----|----|
 | ![](images/clipboard-2450633220.png) | ![](images/clipboard-3067609921.png) |
 | ![](images/DataExplorer_report_screenshot4.png) |  |
 
@@ -547,7 +547,7 @@ Lastly, we can again generate an automatized EDA report with ExpReport():
 `ExpReport(data = penguins, Target = "species", label = "Penguin Species", op_file="Samp1.html", Rc=3 )`
 
 |  |  |
-|------------------------------------|------------------------------------|
+|----|----|
 | ![](images/smartEDA_report_screenshot1.png) | ![](images/smartEDA_report_screenshot2.png) |
 | ![](images/smartEDA_report_screenshot3.png) | ![](images/smartEDA_report_screenshot4.png) |
 
@@ -563,24 +563,64 @@ In this exercise we will work with the built-in `iris` package in R:
 
 a\. Calculate the mode, mean and the median for the `iris$Sepal.Length` variable
 
+```{r, ch5 exercise 1a, eval=FALSE}
+
+```
+
 b\. Calculate the interquartile range, variance and the standard deviation for iris\$Sepal.Length
 
+```{r, ch5 exercise 1b, eval=FALSE}
+
+```
+
 c\. Calculate all five measures at once by using a function that does so (Choose by yourself, which one you want to use)
+
+```{r, ch5 exercise 1c, eval=FALSE}
+
+```
 
 ### Exercise 2: Contingency Tables and Correlations
 
 a\. Make a Contingency Table for `esoph$agegp` and `esoph$alcgp`
 
+```{r, ch5 exercise 2a, eval=FALSE}
+
+```
+
 b\. Cut down the iris dataset to Sepal.Length, Sepal.Width, Petal.Length and Petal.Width and save it in an object called iris_numeric.
+
+```{r, ch5 exercise 2b, eval=FALSE}
+
+```
 
 c\. Make a correlation matrix with iris_numeric
 
+```{r, ch5 exercise 2c, eval=FALSE}
+
+```
+
 d\. Make the correlation matrix prettyChapter 4: Exploratory Data Analysis
+
+```{r, ch5 exercise 2d, eval=FALSE}
+
+```
 
 ### Exercise 3: Working with packages
 
 a\. Use a function to get an overview of the dataset mtcars
 
+```{r, ch5 exercise 3a, eval=FALSE}
+
+```
+
 b\. Have a look at the structure of the missing values in mtcars
 
+```{r, ch5 exercise 3b, eval=FALSE}
+
+```
+
 c\. Make an automatized EDA report for mtcars!
+
+```{r, ch5 exercise 3c, eval=FALSE}
+
+```

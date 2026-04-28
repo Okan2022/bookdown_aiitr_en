@@ -176,7 +176,7 @@ ggplot(data1, aes(x = value)) +
 Well, we now can do the exact same things as we did above: Fill the density plot with a color with `fill()`, make the fill color more transparent with `alpha()` and change the color of the line with `color()` in the `geom_density()` function. We can rescale the x-axis with `scale_x_continous`, and we can change the labels of the axis with `labs()`, and change the theme to `theme_minimal()`.
 
 ```{r density color}
-ggplot(data1, aes(x = value, fill =)) + 
+ggplot(data1, aes(x = value)) + 
   geom_density(color = "white", 
                fill = "orange",
                alpha = 0.6) + 
@@ -870,7 +870,7 @@ p <- ggplot(data9, aes(x = Month, y = Temperature, group = Year, color = factor(
 p
 ```
 
-## Outlook
+## Summary
 
 That was a brief introduction to data visualization in R and the basic visualization used in Data Analysis. The start of most visualizations are those basic plots and as you saw it is the same workflow. First, you have to built the basic plot, second you have to add the layers you want. And ggplot2 seems to be complicated at first, but since data visualization is a crucial task in Data Science and Research you will have get very fluent, very fast.
 
@@ -1071,19 +1071,19 @@ summary(iris)
 a\. Plot a Chart, which shows the distribution of `Sepal.Length` over the `setosa` Species. Choose the type of distribution chart for yourself. **HINT:** Prepare the data first and then plot it.
 
 ```{r ch4 exercise 1a, eval=FALSE}
-
+#Verteilung Sepal-Length
 ```
 
 b\. Now I want you to add the two other Species to the Plot. Make Sure, that every Species has a unique color.
 
 ```{r ch4 exercise 1b, eval=FALSE}
-
+#Plot mit farblichen Kategorien
 ```
 
 c\. Make a nice Plot! Give the Plot a meaningful title, meaningful labels for the x-axis and the y-axis and play around with the colors.
 
 ```{r ch4 exercise 1c, eval=FALSE}
-
+# Plot gestalten
 ```
 
 d\. Interpret the Plot!
@@ -1093,19 +1093,19 @@ d\. Interpret the Plot!
 a\. Calculate the average `Petal.Length` for every Species in a nice Barplot. HINT: You have to prepare the data again before you plot it
 
 ```{r ch4 exercise 2a, eval=FALSE}
-
+# Barplot Petal.Length
 ```
 
 b\. Add the Means of the `Petal.Width` variable to the plot, so you get a nice grouped Barplot.
 
 ```{r ch4 exercise 2b, eval=FALSE}
-
+# Mittelwerte hinzufügen
 ```
 
 c\. Make a nice Plot! Give the Plot a meaningful title, meaningful labels for the x-axis and the y-axis and play around with the colors.
 
 ```{r ch4 exercise 2c, eval=FALSE}
-
+# Plot gestalten
 ```
 
 d\. Interpret the Plot!
@@ -1115,17 +1115,17 @@ d\. Interpret the Plot!
 a\. Make a scatter plot where you plot `sepal.length` on the x-axis and `sepal.width` on the y-axis. Make the plot for the species `virginica`
 
 ```{r ch4 exercise 3a, eval=FALSE}
-
+#Streudiagramm Sepal.Length und Sepal.Width
 ```
 
 b\. Now I want you to add the species `versicolor` to the plot. The dots of this species should have a different color AND a different form.
 
 ```{r ch4 exercise 3b, eval=FALSE}
-
+# versicolor hinzifügen
 ```
 
 c\. Make a nice plot! Add a theme, labels, and a nice title
 
 ```{r ch4 exercise 3c, eval=FALSE}
-
+# Plot gestalten
 ```

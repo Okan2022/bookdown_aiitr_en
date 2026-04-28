@@ -21,7 +21,7 @@ This course is different! In this course, you can download R-scripts and load th
 
 ### Prerequisities {.unnumbered}
 
--   `R` and RStudio. You should download the most current version of R and RStudio. How to do that easily is described [here](https://posit.co/download/rstudio-desktop/ "Link to download R").
+-   `R` and `RStudio`. You should download the most current version of R and RStudio. How to do that easily is described [here](https://posit.co/download/rstudio-desktop/ "Link to download R").
 
 ### What is `R` and `RStudio` ? {.unnumbered}
 
@@ -42,7 +42,7 @@ In this course you will learn:
 
 -   To get familiar with `R` and its basic language
 -   Core commands from the tidyverse package
--   Data Wrangling, Data Bridging, Data Munging, Data Manipulation
+-   Data Manipulation
 -   An efficient Workflow
 -   A brief introduction into basic Data Analysis and Exploratory Data Analysis.
 
@@ -99,8 +99,13 @@ You will **not** learn:
 -   Apply function
 -   Functions
 
+**7. Further Explanations Data Analysis**
+
+-   Probability Theory
+-   Regression Diagnostics
+
 ## About Me {.unnumbered}
 
-My name is Okan and I am a Data Scientist. To be more precise, my profession is Data Science, but originally I graduated in Political Science. I know, what kind of transition is that? From Politics to Data? Well, my university was specialized in empirical research and Political Science was no exception. To explain political phenomena, I analysed large data sets and it was the most fun part of my studies. So I decided to become a Data Scientist and I could not be happier about that decision!
+My name is Okan and I am Political Scientist by training and currently work as a Consultant for Data and AI. My job is to enable my clients to use data science to make their lifes easier and thus better. As mentioned this course started as an Introduction for my graduate students to R and I hope it will continue to teach R to everyone, who is as enthusiastic about data as my students were back then!
 
 Be part of this Course! Please report errors, bugs and problems with the code. If you have any ideas how to improve this course please contact me on GitHub or via E-Mail. In general, let us stay in touch, follow me on GitHub and LinkedIn and if you like this course share your experience and recommend it to others!
