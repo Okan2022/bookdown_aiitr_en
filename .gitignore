@@ -3,5 +3,5 @@
 .Rproj.user
 *.Rproj
 _bookdown_files/
-_bookdownproj_files/
+bookdownproj_files/
 libs/
