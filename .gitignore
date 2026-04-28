@@ -6,3 +6,5 @@ _bookdown_files/
 bookdownproj_files/
 libs/
 docs/
+*_files/
+*_cache/
