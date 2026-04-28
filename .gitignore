@@ -8,3 +8,6 @@ libs/
 docs/
 *_files/
 *_cache/
+.Rproj.user/
+*.html
+*.pdf
