@@ -1,4 +1,6 @@
 bookdown::gitbook:
+  self_contained: false
+  lib_dir: "libs"
   css: style.css
   toc_depth: 2
   config:
