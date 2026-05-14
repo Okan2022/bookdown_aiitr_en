@@ -434,7 +434,7 @@ naniar::miss_var_summary(penguins_raw)
 
 The function that made naniar famous is the gg_miss_upset() function, which shows us the structure of the missing values graphically:
 
-```{r naniar gg_miss_upset}
+```{r naniar gg_miss_upset, warning=FALSE, message=FALSE}
 naniar::gg_miss_upset(penguins_raw)
 ```
 
@@ -555,9 +555,9 @@ Lastly, we can again generate an automatized EDA report with ExpReport():
 
 And that is it - at least for now - the possibilities and functions of the packages presented could fill easily an own course and as I already said, at one point everyone gets its own EDA routine and has its own packages they want to work with. The important point is to always get an overview over your data and to always check for interesting patterns in your data before conducting substantial analysis.
 
-## Exercise Section
+## Exercises EDA
 
-### Exercise 1: Standard Descriptive Statistics
+### Exercise 1: Standard Descriptive Statistics {#ex41}
 
 In this exercise we will work with the built-in `iris` package in R:
 
@@ -579,7 +579,7 @@ c\. Calculate all five measures at once by using a function that does so (Choose
 
 ```
 
-### Exercise 2: Contingency Tables and Correlations
+### Exercise 2: Contingency Tables and Correlations {#ex42}
 
 a\. Make a Contingency Table for `esoph$agegp` and `esoph$alcgp`
 
@@ -605,7 +605,7 @@ d\. Make the correlation matrix prettyChapter 4: Exploratory Data Analysis
 
 ```
 
-### Exercise 3: Working with packages
+### Exercise 3: Working with packages {#ex43}
 
 a\. Use a function to get an overview of the dataset mtcars
 

@@ -204,7 +204,7 @@ We can also change the classes of variables. To do so, we can use `as.factor()`,
 -   To do so, we change call `as.character()` and put the object in it. Then we assign it to another object called `cola_prices_character`. This object will have the class `"character"`.
 
 ```{r changing classes}
-#We want the cola_prices vector to be a character 
+# We want the cola_prices vector to be a character 
 cola_prices_character <- as.character(cola_prices)
 
 #Checking it
@@ -254,15 +254,15 @@ We can also generate a matrix by simulating it. There are a lot of things to car
 # Create a matrix
 matrix_example <- matrix(1:20, nrow = 4, ncol = 5, byrow = T) #
 
-# Checking it
+#Checking it
 print(matrix_example)
-# Checking the dimensions
+#Checking the dimensions
 dim(matrix_example)
 
 # What happens if byrow is set to FALSE?
 matrix_example2 <- matrix(1:20, nrow = 4, ncol = 5, byrow = F)
 
-# Checking it 
+#Checking it 
 print(matrix_example2)
 dim(matrix_example2)
 ```
@@ -319,7 +319,7 @@ df_example <- data.frame(
     europe = c(TRUE, FALSE, TRUE, TRUE)
   )
 
-# Checking it
+#Checking it
 print(df_example)
 ```
 
@@ -530,13 +530,13 @@ ifelse(grade == 1.0, "Amazing",
 # The same logic: ifelse(test expression, body expression if, ifelse(test expression 2, body expression if 2)) etc..
 ```
 
-## Outlook
+## Outlook Fundamentals
 
 This section was a brief introduction to the fundamentals of R. It was kept simple to give you a feeling for a R. These are the absolute basics, which are needed to understand everything, which will be built based on it.
 
-## Exercise Section
+## Exercises Fundamentals
 
-### Exercise 1: Making your first Vector
+### Exercise 1: Making your first Vector {#ex1}
 
 Create a vector called `my_vector` with the values 1,2,3 and check is class.
 
@@ -548,7 +548,7 @@ my_vector <-
 
 ```
 
-### Exercise 2: Making your first matrix
+### Exercise 2: Making your first matrix {#ex2}
 
 Create a Matrix called `student`. This should contain information about the `name`, `age` and `major`. Make three vectors wiht three entries and bind them together to a the matrix `student`. Print the matrix.
 
@@ -566,7 +566,7 @@ student <-
 
 ```
 
-### Exercise 3: `ifelse` function
+### Exercise 3: `ifelse` function {#ex3}
 
 Write an `ifelse` statement that checks if a given number is positive or negative. If the number is positive, print "Number is positive", otherwise print "Number is negative". Feel free to decide if you want to use the `ifelse` function or the `ifelse` condition.
 
@@ -579,7 +579,7 @@ number <- -4
 
 ```
 
-### Exercise 4: `ifelse` ladders
+### Exercise 4: `ifelse` ladders {#ex4}
 
 Write an if-else ladder that categorizes a student's grade based on their score. The grading criteria are as follows:
 

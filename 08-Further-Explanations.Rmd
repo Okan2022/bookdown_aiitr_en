@@ -130,7 +130,7 @@ uniform_dis <- data.frame(
   Probability = rep(1/6, 6)
 )
 
-# Plot it
+#Plot it
 ggplot(uniform_dis, aes(x = Outcome, y = Probability)) +
   geom_point() +
   labs(
@@ -160,7 +160,7 @@ We can plot the cumulative Probability by calculating it with the `cumsum()` fun
 # Calculating the cumsum
 uniform_dis$cumsum <- cumsum(uniform_dis$Probability)
 
-# Plot it
+#Plot it
 ggplot(uniform_dis, aes(x = Outcome, y = cumsum)) +
   geom_point() +
   labs(
@@ -186,7 +186,7 @@ fair_coin <- data.frame(
                    labels = c("Tail", "Head"))
 )
 
-# Plot the results
+#Plot the results
 ggplot(fair_coin, aes(x = outcome)) +
   geom_bar(fill = "#89CFF0", width = 0.35) +
   labs(
@@ -209,7 +209,7 @@ unfair_coin <- data.frame(
                    labels = c("Tail", "Head"))
 )
 
-# Plot the results
+#Plot the results
 ggplot(unfair_coin, aes(x = outcome)) +
   geom_bar(fill = "#89CFF0", width = 0.35) +
   labs(
@@ -326,7 +326,7 @@ snd <- data.frame(
   sample = rnorm(1000000, mean = 0, sd = 1)
   )
 
-# Plot it
+#Plot it
 ggplot(snd, aes(x = sample)) +
   geom_density() +
   labs(title = "Normal Distribution",
@@ -847,7 +847,7 @@ df2 <- data.frame(X_quadratic, Y_quadratic)
 Linear regression is a mathematical model. Therefore it is based on assumptions. But we should not just assume them, we should test them! One assumption is that linearity is assumed between X and Y. But that can be problematic consider following example:
 
 ```{r plotting linear fit through quadratic form}
-# estimate a simple regression model 
+#estimate a simple regression model 
 model_simple <- lm(Y_quadratic ~ X_quadratic, data = df2)
 
 # Summarize it
@@ -863,7 +863,7 @@ ggplot(df2, aes(x = X_quadratic, y = Y_quadratic)) +
 As you can see something look wrong. There seems to be a correlation between the two variables, but it does not seem linear. In such a case it does make sense to square the independent variable and run the regression again:
 
 ```{r plotting quadratic fit with quadratic form}
-# estimate a simple regression model 
+#estimate a simple regression model 
 model_quadratic <- lm(Y_quadratic ~ X_quadratic^2, data = df2)
 
 #Summarize it 
@@ -930,7 +930,7 @@ for (i in 2:length(date)) {
     y_time[i] <- -50 + 0.98 * y_time[i-1] + rnorm(n = 1, sd = 200)
 }
 
-# Plot it
+#Plot it
 df_time_series <- data.frame(y_time, date)
 ggplot(df_time_series, aes(date, y_time)) + 
   geom_line() +
@@ -989,7 +989,7 @@ print(adj_r_squared)
 I already mentioned one (abstract) reason why we should include other variables in our model. But there is more to it: You could find effects between two variables X and Y, but it could be that in Reality there is not an association. For example, let us say you collect data about ice cream and shark attacks. Ice cream sales is your independent variable and you want to explain the number of shark attacks, here is your data:
 
 ```{r omitted variable bias}
-# Set seed for reproducibility 
+#Set seed for reproducibility 
 set.seed(0)  
 
 # Number of data points 
@@ -1006,7 +1006,7 @@ violence_crime_true <- 0.2 * temperature -
   0.5 * ice_cream_sales + 
   rnorm(n, mean = 0, sd = 5) 
 
-# Create a data frame 
+#Create a data frame 
 data <- data.frame(temperature = temperature,
                    ice_cream_sales = ice_cream_sales,       
                    violence_crime_true = violence_crime_true)  
@@ -1046,7 +1046,7 @@ $$
 Let us compute them:
 
 ```{r Multicollinearity}
-# Set seed for reproducibility
+#Set seed for reproducibility
 set.seed(42)
 
 # Number of samples
@@ -1068,7 +1068,7 @@ epsilon <- rnorm(n, 0, 3)
 # Generate grades
 grades <- beta_0 + beta_1 * learning_time + beta_2 * gaming_time + epsilon
 
-# Create a data frame
+#Create a data frame
 df_grades <- data.frame(learning_time,
                    gaming_time,
                    grades)

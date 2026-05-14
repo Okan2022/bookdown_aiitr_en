@@ -801,10 +801,10 @@ Now we are ready to use the API.
 
 ```{r world bank data}
 #wb <- WDI( 
-#  country = countries, #We include our countries 
-#  indicator = indicator, #We include our variables 
-#  start = 2020, #start date 
-#  end = 2020) #end date 
+#country = countries, #We include our countries 
+#indicator = indicator, #We include our variables 
+#start = 2020, #start date 
+#end = 2020) #end date 
 
 #This takes some time, especially if you have more countries, more indicators and a longer time span.
 
@@ -981,15 +981,15 @@ head(merged_data4)
 
 *Note: However, this chapter only touched the basics and for merging alone there are several further commands, like inner_join(), anti_join(), semi_join()...etc. But when you encounter problems with the two functions I showed you will run into them eventually.*
 
-## Outlook
+## Outlook Data Manipulation
 
 This Chapter introduced you to the basic functions of the dplyr package. You are now able to transform variables according to your needs. Further, you learned how to use pipes to work efficient code. Loading data, transforming data, and preparing datasets for the analysis. There are a lot of techniques, and in the end of the day data wrangling is the most extensive part, because every analysis is individual and requires an individual preparation. The more individual the analysis, the more individual the preparation.
 
 -   I recommend the standard book for data science in R in this chapter, since it has a strong emphasis on data manipulation: ["R for Data Science"](https://r4ds.had.co.nz/) by Hadley Wickham & Garrett Grolemund.
 
-## Exercise Section
+## Exercises Data Manipulation
 
-### Exercise 1: Let's wrangle kid
+### Exercise 1: Let's wrangle kid {#ex21}
 
 You are interested in discrimination and the perception of the judicial. More specifically, you want to know if people, who fell discriminated evaluate courts differently. Below you see a table with all variables you want to include in your analysis:
 
@@ -1071,7 +1071,7 @@ h.  Check out your new dataset
 ess2 <-
 ```
 
-### Exercise 2: Merging Datasets
+### Exercise 2: Merging Datasets {#ex22}
 
 The `gapminder` package in R loads automatically the gapminder dataset. The gapminder project is an independent educational non-profit fighting global misconceptions, check out their website: <https://www.gapminder.org/> The gapminder dataset is already loaded.
 

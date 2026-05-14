@@ -4,9 +4,9 @@
 pacman::p_load("tidyverse", "gapminder", "babynames", "sjPlot", "ggridges")
 ```
 
-## Chapter 1: Fundamentals
+## Chapter 1: Fundamentals {#solutions-ch1}
 
-### Exercise 1: Making your first Vector
+### Exercise 1: Making your first Vector {#sol11}
 
 Create a vector called `my_vector` with the values 1,2,3 and check is class.
 
@@ -18,7 +18,7 @@ my_vector <- c(1,2,3)
 class(my_vector)
 ```
 
-### Exercise 2: Making your first matrix
+### Exercise 2: Making your first matrix {#sol12}
 
 Create a Matrix called `student`. This should contain information about the `name`, `age` and `major`. Make three vectors with three entries and bind them together to a the matrix `student`. Print the matrix. Choose the three names, age, and major by yourself:
 
@@ -38,7 +38,7 @@ student <- matrix(name, age, major)
 print(student)
 ```
 
-### Exercise 3: `ifelse` function
+### Exercise 3: `ifelse` function {#sol13}
 
 Write an `ifelse` statement that checks if a given number is positive or negative. If the number is positive or 0, print "Number is positive", otherwise print "Number is negative". Feel free to decide if you want to use the `ifelse` function or the `ifelse` condition.
 
@@ -58,7 +58,7 @@ if (number > 0) {
 }
 ```
 
-### Exercise 4: `ifelse` ladders
+### Exercise 4: `ifelse` ladders {#sol14}
 
 Write an if-else ladder that categorizes a student's grade based on their score. The grading criteria are as follows:
 
@@ -89,13 +89,13 @@ if (score >= 90) {
 }
 ```
 
-## Chapter 2: Data Manipulation
+## Chapter 2: Data Manipulation {#solutions-ch2}
 
 ```{r loading packages for Data Manipualtion}
 pacman::p_load("tidyverse")
 ```
 
-### Exercise 1: Let's wrangle kid
+### Exercise 1: Let's wrangle kid {#sol21}
 
 You are interested in discrimination and the perception of the judicial. More specifically, you want to know if people, who fell discriminated evaluate courts differently. Below you see a table with all variables you want to include in your analysis:
 
@@ -214,7 +214,7 @@ ess <- d1 %>%
 head(ess)
 ```
 
-## Chapter 3: Data Visualisation
+## Chapter 3: Data Visualisation {#solutions-ch3}
 
 In this exercise Section, we will work with the `babynames` and the `iris` package. This is a classic built-in package in R, which contains data from the Ronald Fisher's 1936 Study "*The use of multiple measurements in taxonomic problems".* It contains three plant species and four measured features for each species. Let us get an overview of the package:
 
@@ -222,7 +222,7 @@ In this exercise Section, we will work with the `babynames` and the `iris` packa
 summary(iris)
 ```
 
-### Exercise 1: Distributions
+### Exercise 1: Distributions {#sol31}
 
 a\. Plot a Chart, which shows the distribution of `Sepal.Length` over the `setosa` Species. Choose the type of distribution chart for yourself. **HINT:** Prepare the data first and then plot it.
 
@@ -248,21 +248,21 @@ ggplot(iris, aes(x = Sepal.Length)) +
 
 #Histogram
 #iris %>%
-#  filter(Species == "setosa") %>%
-#  ggplot(aes(x = Sepal.Length)) +
-#  geom_histogram()
+#filter(Species == "setosa") %>%
+#ggplot(aes(x = Sepal.Length)) +
+#geom_histogram()
 
 #Density Plot
 #iris %>%
-#  filter(Species == "setosa") %>%
-#  ggplot(aes(x = Sepal.Length)) +
-#  geom_density()
+#filter(Species == "setosa") %>%
+#ggplot(aes(x = Sepal.Length)) +
+#geom_density()
 
 #Boxplot
 #iris %>%
-#  filter(Species == "setosa") %>%
-#  ggplot(aes(x = Sepal.Length)) +
-#  geom_boxplot()
+#filter(Species == "setosa") %>%
+#ggplot(aes(x = Sepal.Length)) +
+#geom_boxplot()
 ```
 
 b\. Now I want you to add the two other Species to the Plot. Make Sure, that every Species has a unique color.
@@ -365,7 +365,7 @@ ggplot(iris, aes(x = Sepal.Length, y = Species, fill = Species)) +
 
 d\. Interpret the Plot!
 
-### Exercise 2: Rankings
+### Exercise 2: Rankings {#sol32}
 
 a\. Calculate the average `Petal.Length` and plot it for every Species in a nice Barplot. **HINT:** You have to prepare the data again before you plot it. Decide for yourself if you want to do it vertically or horizontally.
 
@@ -419,7 +419,7 @@ ggplot(d1, aes(x = PL_average, y = Species, fill = Species)) +
   scale_fill_brewer(palette = "Accent")
 ```
 
-### Exercise 3: Correlation
+### Exercise 3: Correlation {#33}
 
 a\. Make a scatter plot where you plot `Sepal.length` on the x-axis and `Sepal.width` on the y-axis. Make the plot for the species `virginica`
 
@@ -463,9 +463,9 @@ ggplot(d1, aes(x = Sepal.Length, y = Sepal.Width,
   
 ```
 
-## Chapter 4: Exploratory Data Analysis
+## Chapter 4: Exploratory Data Analysis {#solutions-ch4}
 
-### Exercise 1: Standard Descriptive Statistics
+### Exercise 1: Standard Descriptive Statistics {#sol41}
 
 In this exercise we will work with the built-in `iris` package in R:
 
@@ -509,7 +509,7 @@ skimr::skim(iris$Sepal.Length) #skim package
 summarytools::descr(iris$Sepal.Length) #summarytools package
 ```
 
-### Exercise 2: Contingency Tables and Correlations
+### Exercise 2: Contingency Tables and Correlations {#sol42}
 
 a\. Make a Contingency Table for `esoph$agegp` and `esoph$alcgp`
 
@@ -531,11 +531,11 @@ iris_numeric <- iris %>%
 c\. Make a correlation matrix with iris_numeric
 
 ```{r chapter 4 exercise 2c}
-# With corrplot package
+#With corrplot package
 cor_iris <- cor(iris_numeric)
 corrplot::corrplot(cor_iris, method = "color")
 
-# With DataExplorer
+#With DataExplorer
 DataExplorer::plot_correlation(iris_numeric)
 ```
 
@@ -554,7 +554,7 @@ DataExplorer::plot_correlation(
 )
 ```
 
-### Exercise 3: Working with packages
+### Exercise 3: Working with packages {#sol43}
 
 a\. Use a function to get an overview of the dataset mtcars
 
@@ -583,16 +583,21 @@ c\. Make an automized EDA report for mtcars!
 
 `DataExplorer::create_reports(mtcars)`
 
-## Chapter 5: Data Analysis
+## Chapter 5: Data Analysis {#solutions-ch5}
 
 To understand linear regression, we do not have to load any complicated data. Let us assume, you are a market analyst and your customer is the production company of a series called "Breaking Thrones". The production company wants to know how the viewers of the series judge the final episode. You conduct a survey and ask people on how satisfied they were with the season final and some social demographics. Here is your codebook:
 
-| Variable | Description |
-|----|----|
-| id | The id of the respondent |
-| satisfaction | The answer to the question "How satisfied were you with the final episode of Breaking Throne?", where 0 is completely dissatisfied and 10 completely satisfied |
-| age | The age of the respondent |
-| female | The Gender of the respondent, where 0 = Male, 1 = Female |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Variable                          | Description                                                                                                                                                    |
++===================================+================================================================================================================================================================+
+| id                                | The id of the respondent                                                                                                                                       |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| satisfaction                      | The answer to the question "How satisfied were you with the final episode of Breaking Throne?", where 0 is completely dissatisfied and 10 completely satisfied |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| age                               | The age of the respondent                                                                                                                                      |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| female                            | The Gender of the respondent, where 0 = Male, 1 = Female                                                                                                       |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Let us generate the data:
 
@@ -612,7 +617,7 @@ final_BT <- data.frame(
 print(final_BT)
 ```
 
-### Exercise 1: Linear Regression with two variables
+### Exercise 1: Linear Regression with two variables {#sol51}
 
 You want to know if age has an impact on the satisfaction with the last episode. You want to conduct a linear regression.
 
@@ -663,7 +668,7 @@ ggplot(final_BT, aes(x = age, y = cooks_distance)) +
   theme_bw()
 ```
 
-### Exercise 2: Multivariate Regression
+### Exercise 2: Multivariate Regression {#sol52}
 
 a\. Add the variable `female` to your regression
 
@@ -698,9 +703,9 @@ plot_model(m2, type = "int") +
         legend.title = element_blank())
 ```
 
-## Chapter 6: Loops and Functions
+## Chapter 6: Loops and Functions  Exercises {#solutions-ch6}
 
-### Exercise 1: Writing a loop
+### Exercise 1: Writing a loop {#sol6}
 
 Write a `for` loop that prints the square of each number from 1 to 10
 
@@ -709,7 +714,7 @@ Write a `for` loop that prints the square of each number from 1 to 10
 number <- 10
 ```
 
-### Exercise 2: Writing a function
+### Exercise 2: Writing a function {#sol62}
 
 Write a function that takes the input x and squares it:
 
@@ -727,7 +732,7 @@ numbers <- c(1:10)
 sq(numbers)
 ```
 
-### Exercise 3: The midnight Formula
+### Exercise 3: The midnight Formula {#sol63}
 
 This is the midnight formula separated in two equations:
 

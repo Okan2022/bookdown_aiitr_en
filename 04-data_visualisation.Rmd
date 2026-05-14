@@ -66,28 +66,28 @@ ggplot(data1, aes(x = value)) +
 
 Looks better! But still, we have to think about that we want to publish this in an article or report. And for this purpose it is not sufficient. Next we should change the names of the labs, we can do so by adding a plus + again after the `geom_histogram()` command and using the `labs()` function. In this function we define the name of our x-axis and the y-axis. While we are at it, we can define the title in this function as well. What I like to do next is to scale the x-axis and to have ggplot display the values of each of the horizontal grid lines. Here an important mechanic is needed. The code `scale_x_continous()` helps us to rescale the x-axis. In general, the family of `scale_*` functions are powerful, because re-scaling the axis can (must not necessarily) change the visualization, thus these are powerful tools we should be aware of:
 
-```{r histogram with rescaled x-axis, warning=FALSE, message=FALSE}
+```{r histogram with rescaled x-axis}
 ggplot(data1, aes(x = value)) + 
-  geom_histogram(color = "white", fill = "#69b3a2") + 
+  geom_histogram(color = "white", fill = "#69b3a2", binwidth = 0.25) + 
   labs( 
     x = "Value", 
     y = "Count", 
-    title = "A Histogram") + 
-  scale_x_continuous(breaks = seq(-4, 4, 1), 
-                     limits = c(-4, 4))
+    title = "A Histogram") +
+  scale_x_continuous(breaks = seq(-4, 4, 1)) +
+  coord_cartesian(xlim = c(-4,4))
 ```
 
 I do not know about you, but I have a huge problem with the gray grid as a background. This is the default grid by ggplot2 and we can change that. Again, we need a "`+`", and then we can just add the function without any things in it. I decided for the `theme_bw()` function, which is my favorite theme, but I found a website, where you can have a look at the different themes, look [here](https://ggplot2.tidyverse.org/reference/ggtheme.html).
 
-```{r histogram with theme, warning=FALSE}
+```{r histogram with theme, message = FALSE, warning=FALSE}
 ggplot(data1, aes(x = value)) + 
   geom_histogram(color = "white", fill = "#69b3a2") + 
   labs( 
     x = "Value", 
     y = "Count", 
     title = "A Histogram") + 
-  scale_x_continuous(breaks = seq(-4, 4, 1), 
-                     limits = c(-4, 4)) +
+  scale_x_continuous(breaks = seq(-4, 4, 1)) +
+  coord_cartesian(xlim = c(-4,4)) +
   theme_minimal()
 ```
 
@@ -104,8 +104,8 @@ ggplot(data1, aes(x = value)) +
     x = "Value", 
     y = "Count", 
     title = "A Histogram with binwidth = 0.1") + 
-  scale_x_continuous(breaks = seq(-4, 4, 1), 
-                     limits = c(-4, 4)) +
+  scale_x_continuous(breaks = seq(-4, 4, 1)) +
+  coord_cartesian(xlim = c(-4,4)) +
   theme_minimal()
 
 #histogram with bindwidth = 0.6
@@ -116,8 +116,8 @@ ggplot(data1, aes(x = value)) +
     x = "Value", 
     y = "Count", 
     title = "A Histogram with binwidth = 0.6") + 
-  scale_x_continuous(breaks = seq(-4, 4, 1), 
-                     limits = c(-4, 4)) +
+  scale_x_continuous(breaks = seq(-4, 4, 1)) +
+  coord_cartesian(xlim = c(-4,4)) +
   theme_minimal()
 ```
 
@@ -247,7 +247,7 @@ ggplot(data1, aes(x = value)) +
 A huge advantage of Boxplots are that it is an easy way to compare the structure of distributions of different groups. Consider following example: We want to compare the income of people with migration background and people without migration background. Let us say we collected a sample of people with 2000 respondents, 1000 with and 1000 without migration background. We further collected the incomes of each respondent. Be aware that we now need to define the y-axis with income. Since we do not look anymore at the count of the distribution, but the distribution over another variable (here:income). Let us look at the plot:
 
 ```{r simulating data for second boxplot}
-# Set seed for reproducibility
+#Set seed for reproducibility
 set.seed(123)
 
 # Simulate income data
@@ -550,11 +550,11 @@ As always, we make the plot pretty in the next step. I will use the same code as
 ggplot(data7) + 
   geom_line(aes(x = date, y = y), 
             linetype = "twodash", 
-            size = 1, 
+            linewidth = 1, 
             color = "#365E32") +
   geom_line(aes(x = date, y = y2), 
             linetype = "longdash", 
-            size = 1,
+            linewidth = 1,
             color = "#FD9B63") +
   scale_y_continuous(breaks = seq(-5, 6, 1), 
                      limits = c(-5, 6)) + 
@@ -623,17 +623,17 @@ The last type of visualization are scatter plots. A Scatter plot displays the re
 We want to investigate the relationship between two variables. Let us assume we are the owner of a big choclate company. We want to find the out the relationship of our marketing spendings on the sales of our chocolate. We have the data for each quarter of the year and for years:
 
 ```{r data for scatterplot}
-# Set the seed for reproducibility
+#Set the seed for reproducibility
 set.seed(123)
 
-# Simulate data
+#Simulate data
 n <- 100
 marketing_budget <- runif(n, min = 1000, max = 10000)
 sales <- 2000 + 0.65 * marketing_budget + 
   rnorm(n, mean = 1400, sd = 750)
 quarters <- rep(c("Q1", "Q2", "Q3", "Q4"), 25)
 
-# Create a data frame
+#Create a data frame
 data_point <- data.frame(marketing_budget, sales, 
                          quarters)
 
@@ -673,7 +673,7 @@ ggplot(data_point, aes(x = marketing_budget,
 Let us go on with our example. We do not only have one sort of chocolate but two. Chocolate milk and dark chocolate. Let us get the data for dark chocolate as well:
 
 ```{r more data for scatterplot}
-# Set the seed for reproducibility
+#Set the seed for reproducibility
 set.seed(123)
 
 # Simulate data
@@ -919,7 +919,7 @@ Two visualizations, which get more and more popular: The Ridgeline Chart and the
 The violin chart displays a density plot horizontally. Moreover, it displays mirrors the density plot and puts it toegether:
 
 ```{r violin chart}
-# Setting seed for reproducibility
+#Setting seed for reproducibility
 set.seed(123)  
 
 # Simulate example sports data
@@ -955,28 +955,28 @@ ggplot(sports_data, aes(x = sport, y = height, fill = sport)) +
 The Ridgeline chart is a nice way to compare more than 2 distributions. The idea is to plot the scale on the x-axis. On the y-axis the groups you want to compare are plotted:
 
 ```{r ridgeline plot}
-# Setting seed for reproducibility
+#Setting seed for reproducibility
 set.seed(123)  
 
-# Normal distribution
+#Normal distribution
 normal_data <- rnorm(1000, mean = 50, sd = 10)
 
-# Left-skewed distribution (using exponential distribution)
+#Left-skewed distribution (using exponential distribution)
 left_skewed_data <- rexp(1000, rate = 0.1)
 
-# Right-skewed distribution (using log-normal distribution)
+#Right-skewed distribution (using log-normal distribution)
 right_skewed_data <- rlnorm(1000, meanlog = 3, sdlog = 0.5)
 
 # Bimodal distribution (combining two normal distributions)
 bimodal_data <- c(rnorm(500, mean = 35, sd = 5), rnorm(500, mean = 60, sd = 5))
 
-# Combine the data into a data frame
+#Combine the data into a data frame
 example_data <- data.frame(
   value = c(normal_data, left_skewed_data, right_skewed_data, bimodal_data),
   distribution = factor(rep(c("Normal", "Left-Skewed", "Right-Skewed", "Bimodal"), each = 1000))
 )
 
-# Create the ridgeline chart
+#Create the ridgeline chart
 ggplot(example_data, aes(x = value, y = distribution, fill = distribution)) +
   geom_density_ridges() +
   scale_fill_brewer(palette = "Dark2") +
@@ -1052,13 +1052,13 @@ tm_shape(world) +
               id = "sovereignt")
 ```
 
-## Outlook
+## Outlook Data Visualisation
 
 This chapter was an introduction to one of the most fun part of R, making plots. I introduced you to the standard forms of visualization and gave you a little primer to further visualizations and what is possible in R. The package `ggplot2` is one of the most intuitive (although not for beginners) for data visualization.
 
 -   There is only one book I have to recommend regarding data visualization and that is the ["R Gallery Book"](https://bookdown.org/content/b298e479-b1ab-49fa-b83d-a57c2b034d49/) by Kyle W. Brown. Also check out the [website](https://r-graph-gallery.com/) of this book, it is the standard website, where I search for code snippets for graphs, I can only recommend it.
 
-## Exercise Section
+## Exercises Data Visualisation
 
 In this exercise Section, we will work with the `iris` package. This is a classic built-in package in R, which contains data from the Ronald Fisher's 1936 Study "*The use of multiple measurements in taxonomic problems".* It contains three plant species and four measured features for each species. Let us get an overview of the package:
 
@@ -1066,7 +1066,7 @@ In this exercise Section, we will work with the `iris` package. This is a classi
 summary(iris)
 ```
 
-### Exercise 1: Distributions
+### Exercise 1: Distributions {#ex31}
 
 a\. Plot a Chart, which shows the distribution of `Sepal.Length` over the `setosa` Species. Choose the type of distribution chart for yourself. **HINT:** Prepare the data first and then plot it.
 
@@ -1083,12 +1083,12 @@ b\. Now I want you to add the two other Species to the Plot. Make Sure, that eve
 c\. Make a nice Plot! Give the Plot a meaningful title, meaningful labels for the x-axis and the y-axis and play around with the colors.
 
 ```{r ch4 exercise 1c, eval=FALSE}
-# Plot gestalten
+#Plot gestalten
 ```
 
 d\. Interpret the Plot!
 
-### Exercise 2: Rankings
+### Exercise 2: Rankings {#ex32}
 
 a\. Calculate the average `Petal.Length` for every Species in a nice Barplot. HINT: You have to prepare the data again before you plot it
 
@@ -1105,12 +1105,12 @@ b\. Add the Means of the `Petal.Width` variable to the plot, so you get a nice g
 c\. Make a nice Plot! Give the Plot a meaningful title, meaningful labels for the x-axis and the y-axis and play around with the colors.
 
 ```{r ch4 exercise 2c, eval=FALSE}
-# Plot gestalten
+#Plot gestalten
 ```
 
 d\. Interpret the Plot!
 
-### Exercise 3: Correlation
+### Exercise 3: Correlation {#ex33}
 
 a\. Make a scatter plot where you plot `sepal.length` on the x-axis and `sepal.width` on the y-axis. Make the plot for the species `virginica`
 
@@ -1127,5 +1127,5 @@ b\. Now I want you to add the species `versicolor` to the plot. The dots of this
 c\. Make a nice plot! Add a theme, labels, and a nice title
 
 ```{r ch4 exercise 3c, eval=FALSE}
-# Plot gestalten
+#Plot gestalten
 ```

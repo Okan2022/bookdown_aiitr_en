@@ -262,7 +262,7 @@ Well, that is the t-value on its own does not tell us about statistical signific
                                                 "t(df=2)", 
                                                 "t(df=1)"))
 
-    # Plot
+    #Plot
     plotly::ggplotly(ggplot(densities, aes(x = x, y = density, color = distribution)) +
       geom_line() +
       theme_minimal() +
@@ -289,7 +289,7 @@ t_value_data <- data.frame(
   distribution = rep("t(df=28)", 100)
 )
 
-# Plot
+#Plot
 plotly:: ggplotly(ggplot(t_value_data, aes(x = x, y = density)) + 
   geom_line(lineend = "round") + 
   stat_function(fun = t_density, geom = "area", fill = "gray", 
@@ -586,13 +586,13 @@ this_course = sample(c(0, 1), 100, replace = TRUE)
 coding_ability <- 2 + 0.5 * hours_spent + 0 * this_course + 
   1.5 * hours_spent * this_course + rnorm(100)
 
-# Create a data frame
+#Create a data frame
 df_int <- data.frame(hours_spent, this_course, coding_ability)
 
-# Fit the interaction model
+#Fit the interaction model
 model_interaction <- lm(coding_ability ~  hours_spent * this_course, data = df_int)
 
-# Summarizing models
+#Summarizing models
 summary(model_interaction)
 ```
 
@@ -634,7 +634,7 @@ Let us fill this example with life: We are studying **the effect of study hours 
 
 By visualizing and analyzing the interaction effect, we can draw meaningful conclusions about how different factors (like attending a preparatory course) modify the relationship between study efforts and performance outcomes.
 
-## Outlook
+## Outlook Data Analysis
 
 This chapter was an introduction to hypothesis testing and basic statistical applications. Further, you were introduced in the most popular and important model, linear regression. The chapter showed not only how linear regression in R is computed, but also how to check if effects are robust and how the models fits. Also extensions to linear regression, namely multivariate regression and categorical variable were introduced.
 
@@ -644,7 +644,7 @@ Further Links:
 
 -   A course I can recommend if you want to have a detailed deep dive into statistics is ["Introduction to Econometrics with R"](https://www.econometrics-with-r.org/index.html) by Christoph Hanck, Martin Arnold, Alexander Gerber, and Martin Schmelzer.
 
-## Exercise Section
+## Exercises Data Analysis
 
 To understand linear regression, we do not have to load any complicated data. Let us assume, you are a market analyst and your customer is the production company of a series called "Breaking Thrones". The production company wants to know how the viewers of the series judge the final episode. You conduct a survey and ask people on how satisfied they were with the season final and some social demographics. Here is your codebook:
 
@@ -672,7 +672,7 @@ final_BT <- data.frame(
 print(final_BT)
 ```
 
-### Exercise 1: Linear Regression with two variables
+### Exercise 1: Linear Regression with two variables {#ex51}
 
 You want to know if age has an impact on the satisfaction with the last episode. You want to conduct a linear regression.
 
@@ -696,7 +696,7 @@ d\. Check for influential outliers
 # check for influential outliers
 ```
 
-### Exercise 2: Multivariate Regression
+### Exercise 2: Multivariate Regression {#ex52}
 
 a\. Add the variable `female` to your regression
 
