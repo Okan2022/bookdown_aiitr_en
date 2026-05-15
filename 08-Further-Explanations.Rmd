@@ -9,7 +9,6 @@ pacman::p_load("dplyr", "tidyr", "ggpubr", "gapminder",
                "kableExtra", "car")
 ```
 
-# Creating Function for later
 
 ```{r}
 #Creating Function for Kable Table 

@@ -254,15 +254,15 @@ We can also generate a matrix by simulating it. There are a lot of things to car
 # Create a matrix
 matrix_example <- matrix(1:20, nrow = 4, ncol = 5, byrow = T) #
 
-#Checking it
+# Checking it
 print(matrix_example)
-#Checking the dimensions
+# Checking the dimensions
 dim(matrix_example)
 
 # What happens if byrow is set to FALSE?
 matrix_example2 <- matrix(1:20, nrow = 4, ncol = 5, byrow = F)
 
-#Checking it 
+# Checking it 
 print(matrix_example2)
 dim(matrix_example2)
 ```

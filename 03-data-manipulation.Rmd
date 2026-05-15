@@ -237,7 +237,7 @@ q <- c(6,3,8)
 #Taking first the mean, second the exponential and lastly the square root
 sqrt(exp(mean(q)))
 
-###With a Pipe 
+# With a Pipe 
 q %>% 
   mean() %>%
   exp() %>%

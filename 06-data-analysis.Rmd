@@ -37,7 +37,7 @@ To get the idea of linear regression, let us look at an example. To do so, let u
 
 ```{r simulating data, echo=FALSE}
 
-set.seed(123) # For reproducibility
+set.seed(123) #For reproducibility
 
 n <- 30 
 
@@ -106,7 +106,7 @@ x_sq <- sum((df$x - mean(df$x))^2)
 
 x_sq
 
-# We just have to divide them 
+#We just have to divide them 
 slope <- cov/x_sq 
 
 #printing it
@@ -246,10 +246,10 @@ Well, that is the t-value on its own does not tell us about statistical signific
 -   **T-distributions** are the distribution, we will use to calculate the p-value. I will talk about that in detail in a minute. But they are connected to the degrees of freedom, because degrees of freedom determine the tail behavior and shape of the curve until the point, where the t-distribution looks like a standard normal distribution. Let us visualize that:
 
     ```{r interactive t-statistics plot}
-    # Generate data
+    #Generate data
     x <- seq(-5, 5, length.out = 100)
 
-    # Calculate densities
+    #Calculate densities
     densities <- data.frame(
       x = rep(x, 4),
       density = c(dt(x, df = 1), dt(x, df = 2), dt(x, df = 10), dnorm(x, mean = 0, sd = 1)),
@@ -263,13 +263,13 @@ Well, that is the t-value on its own does not tell us about statistical signific
                                                 "t(df=1)"))
 
     #Plot
-    plotly::ggplotly(ggplot(densities, aes(x = x, y = density, color = distribution)) +
+    ggplot(densities, aes(x = x, y = density, color = distribution)) +
       geom_line() +
       theme_minimal() +
       labs(x = "x", y = "Density", 
            title = "t-distributions with different degrees of freedom") + 
       scale_color_manual(values = c("black", "red", "green", "blue")) + 
-      scale_x_continuous("X", seq(-5,5,1), limits = c(-5,5))) 
+      scale_x_continuous("X", seq(-5,5,1), limits = c(-5,5))
     ```
 
 -   Alright, before we find out, how to determine if a value allows us to reject the null hypothesis, we have to determine a so-called **critical value**. This is no math or anything, it is a probability we decide about. More precisely, the probability that our t-value and thus our coefficient occured by chance alone. If we say the probability that it occured by chance alone is 10%, then this is our critical value. The rule of thumb is, that a probability lower than 5% that the coefficient occured by chance alone indicates statistical significance. Keep in mind, that the critical value can vary depending on the sample size, the degrees of freedom, the field you are working in etc.
@@ -278,11 +278,11 @@ Well, that is the t-value on its own does not tell us about statistical signific
 #setting seed 
 set.seed(42) 
 
-# Generate data
+#Generate data
 x <- seq(-5, 5, length.out = 100)
 t_density <- function(x) dt(x, df = 28)
 
-# Calculate densities
+#Calculate densities
 t_value_data <- data.frame(
   x = rep(x, 1),
   density = dt(x, df = 28),
@@ -290,7 +290,7 @@ t_value_data <- data.frame(
 )
 
 #Plot
-plotly:: ggplotly(ggplot(t_value_data, aes(x = x, y = density)) + 
+ggplot(t_value_data, aes(x = x, y = density)) + 
   geom_line(lineend = "round") + 
   stat_function(fun = t_density, geom = "area", fill = "gray", 
                 alpha = 0.75, xlim = c(-5, -1.701), n = 10000) +
@@ -308,12 +308,11 @@ plotly:: ggplotly(ggplot(t_value_data, aes(x = x, y = density)) +
                color = "pink", 
                linetype = "dashed", 
                linewidth = 0.2) +
-    annotate("point", x = -1.082653, y = dt(-1.082653, df = 28), 
-             color = "pink") +
+  annotate("point", x = -1.082653, y = dt(-1.082653, df = 28), 
+           color = "pink") +
   scale_x_continuous("X", seq(-5,5,1), limits = c(-5,5)) +
   theme_classic() +
-    theme(legend.position = "none")
-)
+  theme(legend.position = "none")
 ```
 
 -   As we can see, the blue line representing the value of the intercept is not in the area it would have to be, for us to reject the null hypothesis. However, the t-value of our coefficient from variable is with about 14 far away from the threshold, so we can reject the null hypothesis. This is how the t-value works. The problem is, that the threshold varies with the degrees of freedom, and you will not have the threshold value in your head for every degree of freedom. You could look it up every time or you use **p-values**, which directly tell you the probability of the coefficient occuring by chance alone.
@@ -392,15 +391,15 @@ CIs$id <- 1:nrow(CIs)
 ggplot(data = CIs) +
   geom_pointrange(
     aes(
-      x = estimates, # point value
-      xmin = lower_ci, # lower CI
-      xmax = upper_ci, # upper CI
-      y = id, # y axis - just observation number
+      x = estimates, #point value
+      xmin = lower_ci, #lower CI
+      xmax = upper_ci, #upper CI
+      y = id, #y axis-just observation number
       color = missed
-    ) # color varies by missed variable
+    ) #color varies by missed variable
   ) +
   geom_vline(
-    aes(xintercept = true_mean), # add vertical line at true_mean
+    aes(xintercept = true_mean), #add vertical line at true_mean
   ) +
   scale_color_manual(values = c("azure4", "red")) + 
   theme_minimal() + 
@@ -411,7 +410,7 @@ ggplot(data = CIs) +
     y = "Sample",
     color = "Is true population parameter inside the CI?"
   ) +
-  theme(legend.position = "top") + # switch the legend to the top
+  theme(legend.position = "top") + #switch the legend to the top
   scale_x_continuous(breaks = c(seq(15, 30, by = 1)))
 ```
 
@@ -497,7 +496,7 @@ If we want to visualize this, we would need a three-dimensional coordinate syste
 As I mentioned in the first chapter, there are different types of variables, let us reconsider them:
 
 |               |               |                                              |
-|---------------|---------------|----------------------------------------------|
+|------------------|------------------|------------------------------------|
 | **Numeric**   | Numbers       | `c(1, 2.4, 3.14, 4)`                         |
 | **Character** | Text          | `c("1", "blue", "fun", "monster")`           |
 | **Logical**   | True or false | `c(TRUE, FALSE, TRUE, FALSE)`                |
@@ -573,16 +572,16 @@ In the following, I will show you an example how to use interaction effects. Let
 -   Interactions effects can be implemented in R, by simply writing it explicitly into the function `lm()`, either with an asterisks `*` or a double point `:`, let us have a look it:
 
 ```{r model with interaction effect}
-# Setting seed for reproducibility
+#Setting seed for reproducibility
 set.seed(123)
 
-# Generate hours spent on a course
+#Generate hours spent on a course
 hours_spent <- runif(100, min = 0, max = 10)
 
-# Generate the course dummy (0 = other courses, 1 = this course)
+#Generate the course dummy (0 = other courses, 1 = this course)
 this_course = sample(c(0, 1), 100, replace = TRUE)
 
-# Generate y with interaction effect
+#Generate y with interaction effect
 coding_ability <- 2 + 0.5 * hours_spent + 0 * this_course + 
   1.5 * hours_spent * this_course + rnorm(100)
 
@@ -649,7 +648,7 @@ Further Links:
 To understand linear regression, we do not have to load any complicated data. Let us assume, you are a market analyst and your customer is the production company of a series called "Breaking Thrones". The production company wants to know how the viewers of the series judge the final episode. You conduct a survey and ask people on how satisfied they were with the season final and some social demographics. Here is your codebook:
 
 | Variable | Description |
-|----|----|
+|------------------------------------|------------------------------------|
 | id | The id of the respondent |
 | satisfaction | The answer to the question "How satisfied were you with the final episode of Breaking Throne?", where 0 is completely dissatisfied and 10 completely satisfied |
 | age | The age of the respondent |
@@ -679,13 +678,13 @@ You want to know if age has an impact on the satisfaction with the last episode.
 a\. Calculate $\beta_0$ and $\beta_1$ by hand
 
 ```{r ch6 exercise 1a, eval=FALSE}
-# calculate beta_0 and beta_1
+#calculate beta_0 and beta_1
 ```
 
 b\. Calculate $\beta_0$ and $\beta_1$ automatically with R
 
 ```{r ch6 exercise 1b, eval=FALSE}
-# calculate beta_0 and beta_1 automatically
+#calculate beta_0 and beta_1 automatically
 ```
 
 c\. Interpret all quantities of your result: Standard Error, t-statistic, p-value, confidence intervals and the $R^2$.
@@ -693,7 +692,7 @@ c\. Interpret all quantities of your result: Standard Error, t-statistic, p-valu
 d\. Check for influential outliers
 
 ```{r ch6 exercise 1d, eval=FALSE}
-# check for influential outliers
+#check for influential outliers
 ```
 
 ### Exercise 2: Multivariate Regression {#ex52}
@@ -701,7 +700,7 @@ d\. Check for influential outliers
 a\. Add the variable `female` to your regression
 
 ```{r ch6 exercise 2a, eval=FALSE}
-# multivariate regression
+#multivariate regression
 ```
 
 b\. Interpret the Output. What has changed? What stays the same?
@@ -709,13 +708,13 @@ b\. Interpret the Output. What has changed? What stays the same?
 c\. Make an interaction effect between age and gender and interpret it!
 
 ```{r ch6 exercise 2c, eval=FALSE}
-# Regression with interaction effect
+#Regression with interaction effect
 ```
 
 d\. Plot the interaction and make the plot nice
 
 ```{r ch6 exercise 2d, eval=FALSE}
-# Plotting the interaction
+#Plotting the interaction
 
-# Making the plot nice
+#Making the plot nice
 ```

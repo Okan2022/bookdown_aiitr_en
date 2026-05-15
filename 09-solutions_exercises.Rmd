@@ -244,7 +244,7 @@ ggplot(iris, aes(x = Sepal.Length)) +
 ggplot(iris, aes(x = Sepal.Length)) +
   geom_boxplot()
 
-###EDIT: You could also do everythin in one step as shown below
+# EDIT: You could also do everything in one step as shown below
 
 #Histogram
 #iris %>%
@@ -419,7 +419,7 @@ ggplot(d1, aes(x = PL_average, y = Species, fill = Species)) +
   scale_fill_brewer(palette = "Accent")
 ```
 
-### Exercise 3: Correlation {#33}
+### Exercise 3: Correlation {#sol33}
 
 a\. Make a scatter plot where you plot `Sepal.length` on the x-axis and `Sepal.width` on the y-axis. Make the plot for the species `virginica`
 
