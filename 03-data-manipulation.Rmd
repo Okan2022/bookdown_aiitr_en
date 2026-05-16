@@ -187,12 +187,19 @@ The first thing to do, when cleaning data is to load the data into R. The first 
 
 This table presents some of the most frequent data types, which you can download and load into R. There are of course more data types, and to find out if you can read them into R, you can just google the type and look for the command. Mostly you will find a package with a command. And mostly, those commands start with "read".
 
-| File | File Extension | Package | Command |
-|----|----|----|----|
-| **Stata** | .dta | haven | `read_dta()` |
-| **CSV-Files** | .csv | readr (is included in the tidyverse package) | `read_csv()` |
-| **Excel-Files** | .xlsx; .xls | readxl | `read.rds()` |
-| **RData (also RDS Data)** | .RData;.rds | base R functions, no package required | `load()` , `read.rds()` |
++---------------------------+------------------+----------------------------------------------+-------------------------+---+
+| # File                    | # File Extension | # Package                                    | # Command               |   |
+|                           |                  |                                              |                         |   |
+| **Stata**                 | .dta             | haven                                        | `read_dta()`            |   |
++---------------------------+------------------+----------------------------------------------+-------------------------+---+
+|                           |                  |                                              |                         |   |
++---------------------------+------------------+----------------------------------------------+-------------------------+---+
+| **CSV-Files**             | .csv             | readr (is included in the tidyverse package) | `read_csv()`            |   |
++---------------------------+------------------+----------------------------------------------+-------------------------+---+
+| **Excel-Files**           | .xlsx; .xls      | read_excel() \| `read.rds()`                 |                         |   |
++---------------------------+------------------+----------------------------------------------+-------------------------+---+
+| **RData (also RDS Data)** | .RData;.rds      | base R functions, no package required        | `load()` , `read.rds()` |   |
++---------------------------+------------------+----------------------------------------------+-------------------------+---+
 
 : Examples of Different Data Types and how to load them into R
 
@@ -650,7 +657,7 @@ d1 <- ess %>%
     female = gndr) %>% 
   mutate( 
     internet_use = case_when( 
-      internet_use < 5 ~ NA_real_, 
+      internet_use > 5 ~ NA_real_, 
       TRUE ~ internet_use), 
     age = case_when(
       age == 999 ~ NA_real_,

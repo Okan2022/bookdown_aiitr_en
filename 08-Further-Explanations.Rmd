@@ -526,23 +526,23 @@ Remember this Rule? Without any complex mathematics, we can determine, where the
 -   68% of all values falls within one standard deviation of the mean:
 
     $$
-    \mu + \sigma² = 100 + 15 = 115
+    \mu + \sigma = 100 + 15 = 115
     $$
 
     $$
-    \mu - \sigma² = 100 + 15 = 85
+    \mu - \sigma = 100 - 15 = 85
     $$
 
-    We can interpret these values as follows, when your IQ falls between 115 and 115 you share the fate of 68% of our sample.
+    We can interpret these values as follows, when your IQ falls between 85 and 115 you share the fate of 68% of our sample.
 
 -   95% of all values falls within two standard deviations of the mean:
 
     $$
-    \mu + 2\sigma² = 100 + 2 \cdot 15 = 130
+    \mu + 2\sigma = 100 + 2 \cdot 15 = 130
     $$
 
     $$
-    \mu - 2\sigma² = 100 - 2 \cdot 15 = 70
+    \mu - 2\sigma = 100 - 2 \cdot 15 = 70
     $$
 
     If an IQ is not within 70 and 130 then it is either in the 2.5 % lowest or 2.5 highest values. An IQ smaller than 70 means being among the 2.5% lowest IQs and on the other side, if the IQ is above 130 than your IQ is higher than 97.5% !
@@ -550,11 +550,11 @@ Remember this Rule? Without any complex mathematics, we can determine, where the
 -   99.7% of all values falls within three standard deviations of the mean:
 
     $$
-    \mu + 3\sigma² = 100 + 3 \cdot 15 = 145
+    \mu + 3\sigma = 100 + 3 \cdot 15 = 145
     $$
 
     $$
-    \mu + 3\sigma² = 100 - 3 = 55
+    \mu + 3\sigma = 100 - 3 = 55
     $$
 
 If the IQ value is outside of 145 or 55, the value is either at the top 0.15 or if it is below 55 it is at the bottom 0.15.

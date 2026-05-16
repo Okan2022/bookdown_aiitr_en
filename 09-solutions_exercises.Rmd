@@ -389,7 +389,7 @@ ggplot(d1, aes(x = PL_average, y = Species, fill = Species)) +
 
 b\. Make a nice Plot! Give the Plot a meaningful title, meaningful labels for the x-axis and the y-axis and play around with the colors.
 
-```{r chapter 3 exercise 2c}
+```{r chapter 3 exercise 2b}
 #Plotting a horizontal barplot
 ggplot(d1, aes(x = Species, y = PL_average, fill  = Species)) +
   geom_bar(stat = "identity") +
@@ -581,23 +581,23 @@ c\. Make an automized EDA report for mtcars!
 
 `dlookr::describe(mtcars)`
 
-`DataExplorer::create_reports(mtcars)`
+`DataExplorer::create_report(mtcars)`
 
 ## Chapter 5: Data Analysis {#solutions-ch5}
 
 To understand linear regression, we do not have to load any complicated data. Let us assume, you are a market analyst and your customer is the production company of a series called "Breaking Thrones". The production company wants to know how the viewers of the series judge the final episode. You conduct a survey and ask people on how satisfied they were with the season final and some social demographics. Here is your codebook:
 
-+-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Variable                          | Description                                                                                                                                                    |
-+===================================+================================================================================================================================================================+
-| id                                | The id of the respondent                                                                                                                                       |
-+-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| satisfaction                      | The answer to the question "How satisfied were you with the final episode of Breaking Throne?", where 0 is completely dissatisfied and 10 completely satisfied |
-+-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| age                               | The age of the respondent                                                                                                                                      |
-+-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| female                            | The Gender of the respondent, where 0 = Male, 1 = Female                                                                                                       |
-+-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Variable     | Description                                                                                                                                                    |
++==============+================================================================================================================================================================+
+| id           | The id of the respondent                                                                                                                                       |
++--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| satisfaction | The answer to the question "How satisfied were you with the final episode of Breaking Throne?", where 0 is completely dissatisfied and 10 completely satisfied |
++--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| age          | The age of the respondent                                                                                                                                      |
++--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| female       | The Gender of the respondent, where 0 = Male, 1 = Female                                                                                                       |
++--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Let us generate the data:
 
@@ -703,7 +703,7 @@ plot_model(m2, type = "int") +
         legend.title = element_blank())
 ```
 
-## Chapter 6: Loops and Functions  Exercises {#solutions-ch6}
+## Chapter 6: Loops and Functions Exercises {#solutions-ch6}
 
 ### Exercise 1: Writing a loop {#sol6}
 
@@ -712,6 +712,11 @@ Write a `for` loop that prints the square of each number from 1 to 10
 ```{r chapter 6 exercise 1}
 #Assigning an object for a better workflow 
 number <- 10
+
+#correct loop
+for (i in 1:number) {
+  print(i^2)
+}
 ```
 
 ### Exercise 2: Writing a function {#sol62}
